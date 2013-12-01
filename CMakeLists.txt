@@ -272,8 +272,16 @@ check_find_package_result(CAIRO_FOUND "Cairo")
 
 # Download boost and possibly build parts of it
 #################################################
-include( download_boost )
-
+find_package(Boost 1.54 COMPONENTS
+    date_time
+    filesystem
+    iostreams
+    locale
+    program_options
+    regex
+    system
+    thread
+    REQUIRED)
 
 ##########################
 # Find wxWidgets library #
